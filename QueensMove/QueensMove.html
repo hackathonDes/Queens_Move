@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Play Queen's Move Game</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+
+</head>
+    
+<body>
+    <script src="queensMove.js"></script>
+    
+    <div id="myContainer"></div>
+
+    <div id="yourInfo" class="infoBox">
+        <p class="colorTitle">Challenger:</p>
+        <p id="yourScore" class="scoreHolder">0</p>
+    </div>
+    <div id="computerInfo" class="infoBox">
+        <p class="colorTitle">Computer:</p>
+        <p id="computerScore" class="scoreHolder">0</p>
+    </div>
+    
+    <div id="firstSecond">Would you like to go 
+        <button id="first" class="fsButton" onclick="playerGoes(1)">First</button>  or 
+        <button id="colorButton" class="fsButton" onclick="playerGoes(2)">Second</button>? <br>
+        <button id="trainingButton" class="bigButton" onclick="startTraining()">Training Mode</button>
+    </div>
+    
+    <div id="buttonHolder">
+        <button id="resignButton" class="bigButton" onclick="resign()">Resign</button>
+        <button id="againButton" class="bigButton" onclick="newGame()">Play Again</button>
+    </div>
+        
+    <div id="gameHistory"> 
+        <p style="text-align: center; margin: 5px; font-weight: 600;">Game History:</p>
+        <div id="historyBox" style="margin: 5px"> Starting Position: <span id="startingSpan"></span></div>
+    </div>
+    
+    <style>
+        .infoBox{
+            position: absolute;
+            width: 100px;
+            height: 120px;
+            border-radius: 15px;
+            text-align: center;
+            border-style: solid;
+            top: 40px;
+        }
+        #yourInfo{
+            left: 670px;
+            color: black;
+            background-color: white;
+        }
+        #computerInfo{
+            left: 780px;
+            color: black;
+            background-color: red;
+        }
+        .colorTitle{
+            font-weight: 600;
+        }
+        .scoreHolder{
+            font-weight: 400;
+            font-size: 40px;
+            margin: 0px;
+        }
+        #firstSecond{
+            position: absolute;
+            text-align: center;
+            top: 175px;
+            left: 670px;
+            width: 210px;
+            visibility: visible;
+        }
+        .fsButton{
+            width: 60px;
+            height: 30px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .bigButton{
+            position: absolute;
+            left: 670px;
+            width: 210px;
+            height: 40px;
+            border-radius: 15px;
+            background-color: white;
+        }
+        #buttonHolder{
+            visibility: hidden;
+        }
+        #resignButton{
+            top: 180px;
+            background-color: white;
+            color: black;
+        }
+        #againButton{
+            top: 230px;
+            background-color: lightgray;
+            color: gray;
+        }
+        #gameHistory{
+            position: absolute;
+            top: 290px;
+            left: 670px;
+            width: 210px;
+            height: 355px;
+            border-radius: 15px;
+            border-style: solid;
+            overflow: scroll;
+        }
+        #trainingButton{
+            left: 0px;
+            margin-top: 5px;
+        }
+/*
+        #settingsButton{
+            top: 430px;
+        }
+        .scoreButton{
+            position: absolute;
+            border-radius: 12px;
+            background-color: white;
+            visibility: hidden;
+            top: 130px;
+            height: 70px;
+            width: 120px;
+            left: 37px;
+        }
+        .checkMark{
+            margin: 0px;
+        }
+        #settingsBox{
+            z-index: 100;
+            position: absolute;
+            left: 650px;
+            height: 480px;
+            width: 420px;
+            border-style: solid;
+            border-radius: 15px;
+            background-color: white;
+            visibility: hidden;
+        }
+        .setting{
+            margin: 20px;
+            font-size: 20px;
+        }
+        #komiInput{
+            width: 50px;
+            margin-left: 8px;
+        }
+        .cancelorapply{
+            position: absolute;
+            background-color: white;
+            border-radius: 10px;
+            top: 430px;
+            height: 30px;
+        }
+        #applyButton{
+            left: 150px;
+        } 
+        #cancelButton{
+            left: 210px;
+        }
+*/
+</body>
+
+</html>
